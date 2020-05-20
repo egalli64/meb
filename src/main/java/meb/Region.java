@@ -9,20 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/hello")
-public class HelloSrv extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+import meb.bl.RegionService;
 
+@WebServlet("/region")
+public class Region extends HttpServlet {
     @EJB
-    private HelloBean hello;
+    RegionService service;
+
+    private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String name = request.getParameter("name");
-        if (name == null || name.isEmpty()) {
-            name = "Guest";
-        }
-        response.getWriter().append(hello.greetings(name));
+        String id = request.getParameter("id");
+        response.getWriter().println("Region is " + service.getRegionName(id));
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
