@@ -20,7 +20,7 @@ public class Region extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String id = request.getParameter("id");
+        int id = Integer.parseInt(request.getParameter("id"));
         response.getWriter().println("Region is " + service.getRegionName(id));
     }
 
