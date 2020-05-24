@@ -10,13 +10,10 @@ import javax.ejb.Stateless;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Session Bean implementation class Slow
- */
 @Stateless
 @LocalBean
-public class SlowService {
-    Logger LOG = LoggerFactory.getLogger(SlowService.class);
+public class LongRunningService {
+    Logger LOG = LoggerFactory.getLogger(LongRunningService.class);
 
     @Asynchronous
     public void fireAndForget() {

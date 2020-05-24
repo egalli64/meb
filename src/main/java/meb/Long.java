@@ -14,15 +14,15 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import meb.bl.SlowService;
+import meb.bl.LongRunningService;
 
-@WebServlet("/slow")
-public class Slow extends HttpServlet {
+@WebServlet("/long")
+public class Long extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static Logger LOG = LoggerFactory.getLogger(Slow.class);
+    private static Logger LOG = LoggerFactory.getLogger(Long.class);
 
     @EJB
-    SlowService service;
+    LongRunningService service;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
