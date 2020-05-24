@@ -11,10 +11,11 @@ import org.slf4j.LoggerFactory;
 public class CounterSL {
 	private Logger LOG = LoggerFactory.getLogger(CounterSL.class);
 
+	// !!! Stateless EB with a state !!!
 	private int counter = 0;
 
 	public int increase() {
-		LOG.trace("counter was " + counter);
+		LOG.warn("Stateless EB changes its state! Don't do that in real code!");
 		counter += 1;
 		return counter;
 	}
