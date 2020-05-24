@@ -58,7 +58,7 @@ public class Long extends HttpServlet {
             }
             break;
         case "FCE":
-            // FC: Fire and Check later w/ exception
+            // FCE: Fire and Check later w/ exception
             try {
                 Future<String> future = service.fireAndCheckEx();
 
@@ -66,6 +66,28 @@ public class Long extends HttpServlet {
                 Thread.sleep(800);
                 LOG.trace("Now get the future");
                 result = future.get();
+            } catch (InterruptedException | ExecutionException e) {
+                LOG.error("Fire and check failure: " + e.getMessage());
+                result = "Something went wrong";
+            }
+            break;
+        case "FCC":
+            // FC: Fire and Check later but cancel
+            try {
+                Future<String> future = service.fireAndCheckCancel();
+
+                // simulating a long job
+                Thread.sleep(500);
+                LOG.trace("Changed my mind");
+                future.cancel(true);
+
+                if (future.isCancelled()) {
+                    LOG.info("Don't wait for future");
+                    result = "Alternative future";
+                } else {
+                    LOG.info("Wait for cancelled future");
+                    result = future.get();
+                }
             } catch (InterruptedException | ExecutionException e) {
                 LOG.error("Fire and check failure: " + e.getMessage());
                 result = "Something went wrong";

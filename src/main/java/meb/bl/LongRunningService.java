@@ -2,9 +2,11 @@ package meb.bl;
 
 import java.util.concurrent.Future;
 
+import javax.annotation.Resource;
 import javax.ejb.AsyncResult;
 import javax.ejb.Asynchronous;
 import javax.ejb.LocalBean;
+import javax.ejb.SessionContext;
 import javax.ejb.Stateless;
 
 import org.slf4j.Logger;
@@ -13,7 +15,10 @@ import org.slf4j.LoggerFactory;
 @Stateless
 @LocalBean
 public class LongRunningService {
-    Logger LOG = LoggerFactory.getLogger(LongRunningService.class);
+    private static Logger LOG = LoggerFactory.getLogger(LongRunningService.class);
+
+    @Resource
+    SessionContext context;
 
     @Asynchronous
     public void fireAndForget() {
@@ -76,5 +81,23 @@ public class LongRunningService {
             LOG.warn("Job interrupted", ie);
         }
         throw new IllegalStateException("Boom!");
+    }
+
+    @Asynchronous
+    public Future<String> fireAndCheckCancel() {
+        LOG.trace("enter");
+        // simulating a long job
+        try {
+            for(int i = 0; i < 10; i++) {
+                Thread.sleep(200);
+                LOG.info("working " + i);
+                if(context.wasCancelCalled()) {
+                    return new AsyncResult<String>("Future cancelled");
+                }
+            }
+        } catch (InterruptedException ie) {
+            LOG.warn("Job interrupted", ie);
+        }
+        return new AsyncResult<String>("Future result");
     }
 }
