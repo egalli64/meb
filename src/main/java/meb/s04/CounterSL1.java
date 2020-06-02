@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@WebServlet("/counterSL1")
+@WebServlet("/s04/counterSL1")
 public class CounterSL1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static Logger LOG = LoggerFactory.getLogger(CounterSL1.class);
