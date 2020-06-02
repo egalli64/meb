@@ -1,4 +1,4 @@
-package meb;
+package meb.s08;
 
 import java.io.IOException;
 
@@ -9,12 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import meb.bl.RegionService;
-
-@WebServlet("/region")
-public class Region extends HttpServlet {
+@WebServlet("/s08/region")
+public class RegionSrv extends HttpServlet {
     @EJB
-    RegionService service;
+    RegionBean service;
 
     private static final long serialVersionUID = 1L;
 
