@@ -1,4 +1,4 @@
-package meb;
+package meb.s06;
 
 import java.io.IOException;
 
@@ -12,12 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import meb.bl.CounterST;
-
-@WebServlet("/counterST2")
-public class CounterST2 extends HttpServlet {
+@WebServlet("/counterST1")
+public class CounterST1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static Logger LOG = LoggerFactory.getLogger(CounterST2.class);
+	private static Logger LOG = LoggerFactory.getLogger(CounterST1.class);
 
 	@EJB
 	CounterST service;

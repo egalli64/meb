@@ -1,4 +1,4 @@
-package meb;
+package meb.s05;
 
 import java.io.IOException;
 
@@ -12,15 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import meb.bl.CounterSF;
-
 @WebServlet("/counterSF2")
 public class CounterSF2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static Logger LOG = LoggerFactory.getLogger(CounterSF2.class);
 
 	@EJB
-	CounterSF service;
+	CounterSFBean service;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

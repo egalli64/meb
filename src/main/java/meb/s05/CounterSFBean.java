@@ -1,4 +1,4 @@
-package meb.bl;
+package meb.s05;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateful;
@@ -8,8 +8,8 @@ import org.slf4j.LoggerFactory;
 
 @Stateful
 @LocalBean
-public class CounterSF {
-	private Logger LOG = LoggerFactory.getLogger(CounterSF.class);
+public class CounterSFBean {
+	private Logger LOG = LoggerFactory.getLogger(CounterSFBean.class);
 
 	private int counter = 0;
 

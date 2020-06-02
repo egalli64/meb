@@ -1,4 +1,4 @@
-package meb.bl;
+package meb.s06;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.DependsOn;
