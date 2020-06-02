@@ -1,4 +1,4 @@
-package meb.bl;
+package meb.s06;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.LocalBean;
@@ -11,8 +11,8 @@ import org.slf4j.LoggerFactory;
 @Singleton
 @Startup
 @LocalBean
-public class Inception {
-	private Logger LOG = LoggerFactory.getLogger(Inception.class);
+public class InceptionBean {
+	private Logger LOG = LoggerFactory.getLogger(InceptionBean.class);
 
 	@PostConstruct
 	public void init() {

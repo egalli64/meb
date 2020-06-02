@@ -12,13 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@WebServlet("/counterST2")
+@WebServlet("/s06/counterST2")
 public class CounterST2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static Logger LOG = LoggerFactory.getLogger(CounterST2.class);
 
 	@EJB
-	CounterST service;
+	CounterSTBean service;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

@@ -13,8 +13,8 @@ import org.slf4j.LoggerFactory;
 @Startup
 @DependsOn("Inception")
 @LocalBean
-public class CounterST {
-	private Logger LOG = LoggerFactory.getLogger(CounterST.class);
+public class CounterSTBean {
+	private Logger LOG = LoggerFactory.getLogger(CounterSTBean.class);
 
 	@PostConstruct
 	public void init() {
