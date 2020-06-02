@@ -1,4 +1,4 @@
-package meb;
+package meb.s07;
 
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
@@ -14,22 +14,20 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import meb.bl.LongRunningService;
-
-@WebServlet("/long")
-public class Long extends HttpServlet {
+@WebServlet("/s07/longRunning")
+public class LongRunning extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static Logger LOG = LoggerFactory.getLogger(Long.class);
+    private static Logger LOG = LoggerFactory.getLogger(LongRunning.class);
 
     @EJB
-    LongRunningService service;
+    LongRunningBean service;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         LOG.trace("enter");
 
         String type = request.getParameter("type");
-        if (type == null) {
+        if (type == null || type.isEmpty() || type.isBlank()) {
             type = "SYNC";
         }
         String result = null;

@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 
 @Singleton
 @Startup
-@DependsOn("Inception")
+@DependsOn("InceptionBean")
 @LocalBean
 public class CounterSTBean {
 	private Logger LOG = LoggerFactory.getLogger(CounterSTBean.class);

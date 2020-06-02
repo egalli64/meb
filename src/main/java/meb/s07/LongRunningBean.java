@@ -1,4 +1,4 @@
-package meb.bl;
+package meb.s07;
 
 import java.util.concurrent.Future;
 
@@ -14,8 +14,8 @@ import org.slf4j.LoggerFactory;
 
 @Stateless
 @LocalBean
-public class LongRunningService {
-    private static Logger LOG = LoggerFactory.getLogger(LongRunningService.class);
+public class LongRunningBean {
+    private static Logger LOG = LoggerFactory.getLogger(LongRunningBean.class);
 
     @Resource
     SessionContext context;
