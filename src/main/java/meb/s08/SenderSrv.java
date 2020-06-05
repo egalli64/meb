@@ -40,10 +40,10 @@ public class SenderSrv extends HttpServlet {
         boolean check = true;
         try (Connection connection = cf.createConnection(); //
                 Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE); //
-                MessageProducer publisher = session.createProducer(queue)) {
+                MessageProducer mp = session.createProducer(queue)) {
             connection.start();
             TextMessage message = session.createTextMessage(text);
-            publisher.send(message);
+            mp.send(message);
         } catch (Exception ex) {
             check = false;
             LOG.error("Can't send message " + text, ex);
