@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/s08/region")
+@WebServlet("/s09/region")
 public class RegionSrv extends HttpServlet {
     @EJB
     RegionBean service;
