@@ -1,4 +1,4 @@
-package meb.s09.dao;
+package meb.sxx.dao;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

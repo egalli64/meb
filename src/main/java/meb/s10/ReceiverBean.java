@@ -1,4 +1,4 @@
-package meb.s08;
+package meb.s10;
 
 import javax.ejb.ActivationConfigProperty;
 import javax.ejb.MessageDriven;

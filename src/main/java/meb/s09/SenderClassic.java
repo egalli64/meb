@@ -1,4 +1,4 @@
-package meb.s08;
+package meb.s09;
 
 import java.io.IOException;
 
@@ -18,10 +18,10 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@WebServlet("/s08/message")
-public class SenderSrv extends HttpServlet {
+@WebServlet("/s09/classic")
+public class SenderClassic extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static final Logger LOG = LoggerFactory.getLogger(SenderSrv.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SenderClassic.class);
 
     @Resource(lookup = "java:/ConnectionFactory")
     private ConnectionFactory cf;

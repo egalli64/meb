@@ -1,4 +1,4 @@
-package meb.s09;
+package meb.sxx;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
