@@ -18,7 +18,7 @@ public class CounterSTBean {
 
 	@PostConstruct
 	public void init() {
-		LOG.info("CounterST available");
+		LOG.debug("CounterST available");
 	}
 	
 	private int counter = 0;

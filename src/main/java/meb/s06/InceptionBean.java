@@ -16,6 +16,6 @@ public class InceptionBean {
 
 	@PostConstruct
 	public void init() {
-		LOG.info("starting up");
+		LOG.debug("starting up");
 	}
 }

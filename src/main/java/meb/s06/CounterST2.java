@@ -19,10 +19,13 @@ public class CounterST2 extends HttpServlet {
 
 	@EJB
 	CounterSTBean service;
+	
+	@EJB
+	SimpleSingleBean ssb;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		LOG.debug("counter");
+		LOG.debug(ssb.sayHello());
 		response.getWriter().println("Counter is: " + service.increase());
 	}
 
