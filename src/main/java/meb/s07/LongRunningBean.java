@@ -22,9 +22,8 @@ public class LongRunningBean {
 
     @Asynchronous
     public void fireAndForget() {
-        LOG.trace("enter");
-        // simulating a long job
         try {
+            LOG.info("Simulating a long job");
             Thread.sleep(1000);
             LOG.info("Job completed");
         } catch (InterruptedException ie) {
@@ -34,9 +33,8 @@ public class LongRunningBean {
 
     @Asynchronous
     public void fireAndForgetEx() {
-        LOG.trace("enter");
-        // simulating a long job that goes wrong
         try {
+            LOG.info("Simulating a long job that goes wrong");
             Thread.sleep(1000);
             throw new IllegalStateException("Boom!");
         } catch (InterruptedException ie) {
@@ -47,9 +45,8 @@ public class LongRunningBean {
     }
 
     public String synchronous() {
-        LOG.trace("enter");
-        // simulating a long job
         try {
+            LOG.info("Simulating a long job");
             Thread.sleep(1000);
             LOG.info("Job completed");
         } catch (InterruptedException ie) {
@@ -60,9 +57,8 @@ public class LongRunningBean {
 
     @Asynchronous
     public Future<String> fireAndCheck() {
-        LOG.trace("enter");
-        // simulating a long job
         try {
+            LOG.info("Simulating a long job");
             Thread.sleep(1000);
             LOG.info("Job completed");
         } catch (InterruptedException ie) {
@@ -73,9 +69,8 @@ public class LongRunningBean {
 
     @Asynchronous
     public Future<String> fireAndCheckEx() {
-        LOG.trace("enter");
-        // simulating a long job
         try {
+            LOG.info("Simulating a long job");
             Thread.sleep(1000);
         } catch (InterruptedException ie) {
             LOG.warn("Job interrupted", ie);
@@ -85,9 +80,8 @@ public class LongRunningBean {
 
     @Asynchronous
     public Future<String> fireAndCheckCancel() {
-        LOG.trace("enter");
-        // simulating a long job
         try {
+            LOG.info("Simulating a long job");
             for(int i = 0; i < 10; i++) {
                 Thread.sleep(200);
                 LOG.info("working " + i);

@@ -27,7 +27,7 @@ public class LongRunning extends HttpServlet {
         LOG.trace("enter");
 
         String type = request.getParameter("type");
-        if (type == null || type.isEmpty() || type.isBlank()) {
+        if (type == null || type.isBlank()) {
             type = "SYNC";
         }
         String result = null;
@@ -47,8 +47,9 @@ public class LongRunning extends HttpServlet {
             try {
                 Future<String> future = service.fireAndCheck();
 
-                // simulating a long job
+                LOG.trace("simulating a long job FC");
                 Thread.sleep(800);
+
                 result = future.get();
             } catch (InterruptedException | ExecutionException e) {
                 LOG.error("Fire and check failure", e);
@@ -60,7 +61,7 @@ public class LongRunning extends HttpServlet {
             try {
                 Future<String> future = service.fireAndCheckEx();
 
-                // simulating a long job
+                LOG.trace("simulating a long job FCE");
                 Thread.sleep(800);
                 LOG.trace("Now get the future");
                 result = future.get();
@@ -74,7 +75,7 @@ public class LongRunning extends HttpServlet {
             try {
                 Future<String> future = service.fireAndCheckCancel();
 
-                // simulating a long job
+                LOG.trace("simulating a long job FCC");
                 Thread.sleep(500);
                 LOG.trace("Changed my mind");
                 future.cancel(true);
