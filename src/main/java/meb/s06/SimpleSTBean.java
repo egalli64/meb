@@ -7,27 +7,21 @@ import javax.ejb.Singleton;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Session Bean implementation class Single
- */
 @Singleton
 @LocalBean
-public class SimpleSingleBean {
-    private Logger LOG = LoggerFactory.getLogger(InceptionBean.class);
+public class SimpleSTBean {
+    private Logger LOG = LoggerFactory.getLogger(SimpleSTBean.class);
 
-    /**
-     * Default constructor.
-     */
-    public SimpleSingleBean() {
-        // TODO Auto-generated constructor stub
+    public SimpleSTBean() {
     }
 
     @PostConstruct
     public void init() {
         LOG.debug("starting up");
     }
-    
+
     public String sayHello() {
+        LOG.debug("hello");
         return "hello from singleton";
     }
 }

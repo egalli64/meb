@@ -18,15 +18,15 @@ public class CounterST2 extends HttpServlet {
 	private static Logger LOG = LoggerFactory.getLogger(CounterST2.class);
 
 	@EJB
-	CounterSTBean service;
+	CounterSTBean csb;
 	
 	@EJB
-	SimpleSingleBean ssb;
+	SimpleSTBean ssb;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		LOG.debug(ssb.sayHello());
-		response.getWriter().println("Counter is: " + service.increase());
+		response.getWriter().println("Counter is: " + csb.increase());
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
