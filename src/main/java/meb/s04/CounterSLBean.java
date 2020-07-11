@@ -15,7 +15,7 @@ public class CounterSLBean {
 	private int counter = 0;
 
 	public int increase() {
-		LOG.warn("Stateless EB changes its state! Don't do that in real code!");
+		LOG.error("Stateless EB changes its state! Don't do that in real code!");
 		counter += 1;
 		return counter;
 	}

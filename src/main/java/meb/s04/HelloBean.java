@@ -1,4 +1,4 @@
-package meb.s03;
+package meb.s04;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;

@@ -1,4 +1,4 @@
-package meb.s03;
+package meb.s04;
 
 import java.io.IOException;
 
@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/s03/hello")
+@WebServlet("/s04/hello")
 public class HelloSrv extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -19,7 +19,7 @@ public class HelloSrv extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String name = request.getParameter("name");
-        if (name == null || name.isEmpty() || name.isBlank()) {
+        if (name == null || name.isBlank()) {
             name = "Guest";
         }
         response.getWriter().append(hello.greetings(name));
