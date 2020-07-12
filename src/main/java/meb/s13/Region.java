@@ -1,4 +1,4 @@
-package meb.m2;
+package meb.s13;
 
 public class Region {
     private int id;
