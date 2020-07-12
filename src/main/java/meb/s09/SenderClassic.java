@@ -33,7 +33,7 @@ public class SenderClassic extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String text = request.getParameter("text");
-        if (text == null || text.isEmpty() || text.isBlank()) {
+        if (text == null || text.isBlank()) {
             text = "Empty message";
         }
 
