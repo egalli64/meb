@@ -1,4 +1,4 @@
-package meb.s10;
+package meb.s11;
 
 import javax.ejb.ActivationConfigProperty;
 import javax.ejb.MessageDriven;
@@ -11,10 +11,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @MessageDriven(activationConfig = { //
-        @ActivationConfigProperty(propertyName = "destination", propertyValue = "queue/my"),
-        @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue") })
-public class ReceiverBean2 implements MessageListener {
-    static final Logger LOG = LoggerFactory.getLogger(ReceiverBean2.class);
+        @ActivationConfigProperty(propertyName = "destination", propertyValue = "topic/my"),
+        @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Topic") })
+public class TopicReceiverBean2 implements MessageListener {
+    static final Logger LOG = LoggerFactory.getLogger(TopicReceiverBean2.class);
 
     public void onMessage(Message message) {
         TextMessage text = (TextMessage) message;

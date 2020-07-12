@@ -18,9 +18,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @WebServlet("/s09/message")
-public class Sender extends HttpServlet {
+public class QueueSender extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static final Logger LOG = LoggerFactory.getLogger(SenderClassic.class);
+    private static final Logger LOG = LoggerFactory.getLogger(QueueSender.class);
 
     @Inject
     @JMSConnectionFactory("java:/ConnectionFactory")

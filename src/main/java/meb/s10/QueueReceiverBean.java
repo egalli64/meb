@@ -13,8 +13,8 @@ import org.slf4j.LoggerFactory;
 @MessageDriven(activationConfig = { //
         @ActivationConfigProperty(propertyName = "destination", propertyValue = "queue/my"),
         @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue") })
-public class ReceiverBean implements MessageListener {
-    static final Logger LOG = LoggerFactory.getLogger(ReceiverBean.class);
+public class QueueReceiverBean implements MessageListener {
+    static final Logger LOG = LoggerFactory.getLogger(QueueReceiverBean.class);
 
     public void onMessage(Message message) {
         TextMessage text = (TextMessage) message;
